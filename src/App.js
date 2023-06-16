@@ -15,7 +15,11 @@ function ListDemo() {
 
   //Member function
   let addItem = () => {
-    let newList = [...list, "Mumbai"];
+    let inputRef = document.querySelector("#id1");
+    let inputValue = inputRef.value;
+
+
+    let newList = [...list, inputValue];
 
     //internal Dom operation
     setList(newList);
@@ -23,6 +27,7 @@ function ListDemo() {
   return (
     <>
       {/* event building*/}
+      <input type="text" name="input" id="id1" placeholder="Enter..."/>
       <input type="button" value="Add Item" onClick={addItem}/>
 
       {/**list */}
